@@ -1,7 +1,9 @@
 defaultNamespace: grafana
 helm:
   releaseName: grafana
-  chart: https://grafana.github.io/helm-charts/packages/grafana-8.14.0.tgz
+  chart: grafana
+  repo: https://grafana.github.io/helm-charts
+  version: 8.14.0
   valuesFiles:
     - values.yaml
 
