@@ -27,7 +27,7 @@ apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
   name: sandbox-apps
-  namespace: fleet-default
+  namespace: fleet-local
 spec:
   repo: https://github.com/Romiko/rancher-fleet-sandbox.git
   branch: main
