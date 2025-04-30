@@ -14,8 +14,9 @@ targetCustomizations:
       env: dev
   helm:
     values:
-      persistence:
-        enabled: false
       service:
-        type: LoadBalancer
+        type: NodePort
+        port: 80
+        targetPort: 3000
+        nodePort: 32000
       adminPassword: "admin123"
