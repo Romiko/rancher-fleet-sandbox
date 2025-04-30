@@ -1,11 +1,19 @@
-namespace: grafana
+defaultNamespace: grafana
 helm:
+  releaseName: grafana
   chart: https://grafana.github.io/helm-charts/packages/grafana-8.14.0.tgz
+  valuesFiles:
+    - values.yaml
+
 targetCustomizations:
 - name: dev
-  helm:
-    values:
-      replication: false
   clusterSelector:
     matchLabels:
       env: dev
+  helm:
+    values:
+      persistence:
+        enabled: false
+      service:
+        type: LoadBalancer
+      adminPassword: "admin123"
