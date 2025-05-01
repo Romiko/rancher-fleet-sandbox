@@ -2,8 +2,7 @@ defaultNamespace: guestbook
 helm:
   chart: ./chart
   releaseName: guestbook
-  valuesFiles:
-    - chart/values.yaml
+
 targetCustomizations:
 - name: dev
   clusterSelector:
