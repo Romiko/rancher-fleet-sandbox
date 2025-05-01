@@ -12,11 +12,3 @@ targetCustomizations:
   clusterSelector:
     matchLabels:
       env: dev
-  helm:
-    values:
-      service:
-        type: NodePort
-        port: 80
-        targetPort: 3000
-        nodePort: 32000
-      adminPassword: "admin123"
