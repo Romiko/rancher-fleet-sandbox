@@ -4,11 +4,21 @@ helm:
   chart: grafana
   repo: https://grafana.github.io/helm-charts
   version: 8.14.0
-  valuesFiles:
-    - values.yaml
+  # Don't specify valuesFiles here globally if doing per-env below
 
 targetCustomizations:
 - name: dev
   clusterSelector:
     matchLabels:
       env: dev
+  helm:
+    valuesFiles:
+      - values-dev.yaml
+
+- name: prod
+  clusterSelector:
+    matchLabels:
+      env: prod
+  helm:
+    valuesFiles:
+      - values-prod.yaml

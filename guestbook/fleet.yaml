@@ -10,12 +10,12 @@ targetCustomizations:
     matchLabels:
       env: dev
   helm:
-    values:
-      replicaCount: 1
+    valuesFiles:
+      - chart/values-dev.yaml
 - name: prod
   clusterSelector:
     matchLabels:
       env: prod
   helm:
-    values:
-      replicaCount: 3
+    valuesFiles:
+      - chart/values-prod.yaml
